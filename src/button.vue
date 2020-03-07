@@ -1,9 +1,9 @@
 <template>
-    <button class="g-button" :class = "{[`icon-${iconPosition}`]:true}">
-        <svg v-if="icon" class="icon" >
+    <button class="g-button" :class="{[`icon-${iconPosition}`]:true}">
+        <svg v-if="icon" class="icon">
             <use :xlink:href=`#i-${icon}`></use>
         </svg>
-        <div class = "content">
+        <div class="content">
             <slot></slot>
         </div>
 
@@ -12,13 +12,16 @@
 
 <script>
     export default {
-       props: {
-           icon: {},
-           iconPosition: {
-               type: String,
-               default: 'left'
-           }
-       }
+        props: {
+            icon: {},
+            iconPosition: {
+                type: String,
+                default: 'left',
+                validator: function (value) {
+                    return value === 'left' || value === 'right'
+                }
+            }
+        }
     }
 
 </script>
@@ -35,20 +38,38 @@
         justify-content: center;
         align-items: center;
         vertical-align: middle;
+
         &:hover {
             border-color: var(--border-color-hover);
         }
+
         &:active {
             background: var(--button-active-bg);
         }
+
         &:focus {
             outline: none;
         }
-        > .content {order: 2;}
-        > .icon {order: 1; margin-right: .3em;}
+
+        > .content {
+            order: 2;
+        }
+
+        > .icon {
+            order: 1;
+            margin-right: .3em;
+        }
+
         &.icon-right {
-            > .content {order: 1;}
-            > .icon {order: 2; margin-right: 0; margin-left: .3em;}
+            > .content {
+                order: 1;
+            }
+
+            > .icon {
+                order: 2;
+                margin-right: 0;
+                margin-left: .3em;
+            }
         }
     }
 
