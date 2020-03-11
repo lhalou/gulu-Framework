@@ -27,21 +27,81 @@ const expect = chai.expect
     })
     button.$mount()//挂载到内存中，没有报错，则测试正确
     let useElement = button.$el.querySelector('use')
-    //如果主管判断和实际是一样的，则测试通过
+    //如果主观判断和实际是一样的，则测试通过
     let href = useElement.getAttribute('xlink:href')
     expect(href).to.eq('#i-settings')
+    button.$el.remove() //删除button元素
+    button.$destroy() //删除button对象
 }
+
 {
     const Constructor = Vue.extend(Button)
-    const button = new Constructor({
+    const vm = new Constructor({
         propsData:{
             icon: 'settings',
             loading: true
         }
     })
-    button.$mount()//挂载到内存中，没有报错，则测试正确
-    let useElement = button.$el.querySelector('use')
-    //如果主管判断和实际是一样的，则测试通过
+    vm.$mount()//挂载到内存中，没有报错，则测试正确
+    let useElement = vm.$el.querySelector('use')
+    //如果主观判断和实际是一样的，则测试通过
     let href = useElement.getAttribute('xlink:href')
     expect(href).to.eq('#i-loading')
+    //删除创建的div
+    vm.$el.remove() //删除button元素
+    vm.$destroy() //删除button对象
+}
+{
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+        propsData:{
+            icon: 'settings'
+        }
+    })
+    vm.$mount(div)
+    let svg = vm.$el.querySelector('svg')
+    //如果主观判断和实际是一样的，则测试通过
+    let {order} = window.getComputedStyle(svg)
+    expect(order).to.eq("1")
+    //删除创建的div
+    vm.$el.remove() //删除button元素
+    vm.$destroy() //删除button对象
+}
+{
+    const div = document.createElement('div')
+    document.body.appendChild(div)
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+        propsData:{
+            icon: 'settings',
+            iconPosition: 'right'
+        }
+    })
+    vm.$mount(div)
+    let svg = vm.$el.querySelector('svg')
+    //如果主观判断和实际是一样的，则测试通过
+    let {order} = window.getComputedStyle(svg)
+    expect(order).to.eq("2")
+    //删除创建的div
+    vm.$el.remove() //删除button元素
+    vm.$destroy() //删除button对象
+}
+//测试click事件
+{
+    const Constructor = Vue.extend(Button)
+    const vm = new Constructor({
+        propsData:{
+            icon: 'settings'
+        }
+    })
+    vm.$mount()//挂载到内存中，没有报错，则测试正确
+    //期待click中的function执行，需要使用到mock
+    vm.$on('click',function(){
+        expect(1).to.eq(1)
+    })
+    let button = vm.$el
+    button.click()
+
 }
