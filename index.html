@@ -22,6 +22,7 @@
             --color: #333;
             --border-color: #999;
             --border-color-hover: #666;
+            --border-radius: 4px;
         }
 
         #app {
@@ -44,10 +45,14 @@
     <g-button icon = "settings" :loading = "loading2" @click = "loading2 = !loading2">
         按钮
     </g-button>
-    <g-button icon = "settings" icon-position="right" :loading = "loading3" @click = "loading3 = !loading3">
+    <g-button icon = "settings" icon-position="right" :loading = "loading3"
+              @click = "loading3 = !loading3">
         按钮
     </g-button>
-
+    <g-button-group>
+        <g-button icon = "left">上一页</g-button>
+        <g-button icon = "right" icon-position="right">下一页</g-button>
+    </g-button-group>
 </div>
 <script src="./src/app.js"></script>
 <script src="//at.alicdn.com/t/font_1677499_dm60hcxgv7s.js"></script>
