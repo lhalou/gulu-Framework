@@ -27,8 +27,21 @@ const expect = chai.expect
     })
     button.$mount()//挂载到内存中，没有报错，则测试正确
     let useElement = button.$el.querySelector('use')
-    console.log(useElement)
     //如果主管判断和实际是一样的，则测试通过
     let href = useElement.getAttribute('xlink:href')
     expect(href).to.eq('#i-settings')
+}
+{
+    const Constructor = Vue.extend(Button)
+    const button = new Constructor({
+        propsData:{
+            icon: 'settings',
+            loading: true
+        }
+    })
+    button.$mount()//挂载到内存中，没有报错，则测试正确
+    let useElement = button.$el.querySelector('use')
+    //如果主管判断和实际是一样的，则测试通过
+    let href = useElement.getAttribute('xlink:href')
+    expect(href).to.eq('#i-loading')
 }
