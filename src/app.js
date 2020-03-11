@@ -16,6 +16,8 @@ new Vue({
 
 //单元测试
 import chai from 'chai'
+import spies from 'chai-spies'
+chai.use(spies)
 const expect = chai.expect
 {
     //动态生成一个按钮
@@ -98,10 +100,10 @@ const expect = chai.expect
     })
     vm.$mount()//挂载到内存中，没有报错，则测试正确
     //期待click中的function执行，需要使用到mock
-    vm.$on('click',function(){
-        expect(1).to.eq(1)
-    })
+    let spy = chai.spy(function(){})
+    vm.$on('click',spy)
     let button = vm.$el
     button.click()
-
+    //函数的mock
+    expect(spy).to.have.been.called()
 }
