@@ -46,6 +46,11 @@
         <g-input value = "美丽" readonly></g-input>
         <g-input value = "快乐" ></g-input>
     </div>
+    <div class = "box">
+        <g-input v-model = "message"></g-input>
+        <p>{{message}}</p>
+        <button @click = "message += 1">+1</button>
+    </div>
     <div class="box">
         <g-input value = "哈喽" @change = "inputChange"></g-input>
     </div>
