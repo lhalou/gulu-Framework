@@ -7,6 +7,7 @@
 
 <script>
     export default {
+        name: 'Gulu-button-group',
         //防止用户随意嵌套标签
         mouted(){
             for (let node of this.$el.children){
@@ -19,7 +20,7 @@
     }
 </script>
 
-<style lang = "scss">
+<style lang = "scss" scoped>
     .g-button-group {
         display: inline-flex;
         vertical-align: middle;
