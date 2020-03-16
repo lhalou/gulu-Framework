@@ -1,7 +1,11 @@
 <template>
     <div class = "wrapper" :class = "{error}">
         <input :value = "value" type = "text" :disabled = "disabled" :readonly = "readonly">
-        <icon></icon>
+        <template v-if = "error">
+            <icon name = "info" class = "icon-error"></icon>
+            <span class = "errorMessage">{{error}}</span>
+        </template>
+
     </div>
 </template>
 
@@ -29,6 +33,7 @@
         components: {
             Icon
         }
+
     }
 </script>
 
@@ -41,32 +46,16 @@
     $box-shadow-color: rgba(0,0,0,0.5);
     $red:#F1453D;
     .wrapper {
-        font-size: $font-size;
-        display: inline-block;
+        font-size: $font-size;display: inline-flex;align-items: center;
+        > :not(:last-child){margin-right: 0.5em; }
         > input {
-            height: 32px;
-            border: 1px solid $border-color;
-            border-radius: 4px;
-            padding: 0 8px;
-            font-size: inherit;
-            &:hover {
-                border-color: $border-color-hover;
-            }
-            &:focus {
-                box-shadow: 0 1px 3px $box-shadow-color;
-                outline: none;
-            }
-            &[disabled],&[readonly]{
-                border-color: #bbb;
-                background: #fff;
-                color: #bbb;
-                cursor: not-allowed;
-            }
+            height: 32px;border: 1px solid $border-color;border-radius: 4px;padding: 0 8px;font-size: inherit;
+            &:hover {border-color: $border-color-hover;}
+            &:focus {box-shadow: 0 1px 3px $box-shadow-color;outline: none;}
+            &[disabled],&[readonly]{border-color: #bbb;background: #fff;color: #bbb;cursor: not-allowed;}
         }
-        &.error {
-            > input {
-                border-color: $red;
-            }
-        }
+        &.error { > input {border-color: $red;} }
+        .icon-error {fill: $red;}
+        .errorMessage {color: $red;}
     }
 </style>
