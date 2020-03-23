@@ -12,6 +12,19 @@
             },
             offset: {
                 type: [Number,String]
+            },
+            phone: {
+                type: Object,
+                validator(value){
+                    let keys = Object.keys(value)
+                    let valid = true
+                    keys.forEach(key => {
+                        if(!['span','offset'].includes(key)){
+                            valid = false
+                        }
+                    })
+                    return valid
+                }
             }
         },
         data(){
@@ -38,7 +51,7 @@
 </script>
 <style scoped lang = "scss">
     .col {
-        width: 50%;
+        /*width: 50%;*/
         $class-prefix: col-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {
