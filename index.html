@@ -32,10 +32,28 @@
 
 </head>
 <style>
-.demo {
-    border: 1px solid #666;
-    min-height: 100px;
-}
+    .demo {
+        min-height: 100px;
+    }
+
+    .sider {
+        background: #333;
+        width: 200px;
+    }
+
+    .header {
+        background: #999;
+        height: 100px;
+    }
+
+    .sider.slide-enter, .sider.slide-leave-to {
+        margin-left: -200px;
+    }
+
+    .footer {
+        background: #ccc;
+        height: 50px;
+    }
 </style>
 <body>
 <div id="app">
