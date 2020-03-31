@@ -32,11 +32,11 @@ Vue.component('g-sider', Sider)
 Vue.component('g-footer', Footer)
 Vue.component('g-toast', Toast)
 Vue.use(plugin)
-Vue.component('g-tabs',Tabs)
-Vue.component('g-tabs-body',TabsBody)
-Vue.component('g-tabs-head',TabsHead)
-Vue.component('g-tabs-item',TabsItem)
-Vue.component('g-tabs-pane',TabsPane)
+Vue.component('g-tabs', Tabs)
+Vue.component('g-tabs-body', TabsBody)
+Vue.component('g-tabs-head', TabsHead)
+Vue.component('g-tabs-item', TabsItem)
+Vue.component('g-tabs-pane', TabsPane)
 
 
 new Vue({
@@ -48,14 +48,17 @@ new Vue({
 
     },
     methods: {
-
+        yyy(data) {
+            console.log('yy')
+            console.log(data)
+        },
         showToast() {
-            this.$toast('你的智商需要充值',{
+            this.$toast('你的智商需要充值', {
                 position: 'middle',
                 enableHtml: false,
                 closeButton: {
                     text: '充值',
-                    callback(){
+                    callback() {
                         console.log('他说已经充值')
                     }
                 },
