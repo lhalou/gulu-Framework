@@ -9,6 +9,7 @@
     export default {
         name: 'Gulu-button-group',
         //防止用户随意嵌套标签
+        //this.$el 获取到所有的标签
         mouted(){
             for (let node of this.$el.children){
                 let name = node.nodeName.toLowerCase()
@@ -26,9 +27,11 @@
         vertical-align: middle;
         > .g-button{
             border-radius: 0;
-            &:not(first-child){
+            &:not(:first-child){
                 margin-left: -1px;
             }
+                
+            
             &:first-child {
                 border-top-left-radius: var(--border-radius);
                 border-bottom-left-radius: var(--border-radius);

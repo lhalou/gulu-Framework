@@ -1,4 +1,4 @@
-import Vue from "vue"
+import Vue from 'vue'
 import Button from './button.vue'
 import Icon from './icon.vue'
 import ButtonGroup from './button-group.vue'
@@ -18,7 +18,7 @@ import TabsHead from './tabs-head.vue'
 import TabsItem from './tabs-item.vue'
 import TabsPane from './tabs-pane.vue'
 
-
+//全局组件
 Vue.component('g-button', Button)
 Vue.component('g-icon', Icon)
 Vue.component('g-button-group', ButtonGroup)
@@ -42,7 +42,8 @@ Vue.component('g-tabs-pane', TabsPane)
 new Vue({
     el: '#app',
     data: {
-        selectedTab: 'sports'
+        selectedTab: 'sports',
+        loading1: false
     },
     created() {
 
