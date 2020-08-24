@@ -65,10 +65,8 @@
 </script>
 <style scoped lang = "scss">
     .col {
-        height: 60px;
-        background: #aaa;
-        border: 1px solid red;
-        width: 50%; 
+       
+        /* width: 50%;   */
         $class-prefix: col-;
         @for $n from 1 through 24 {
             &.#{$class-prefix}#{$n} {

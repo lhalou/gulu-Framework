@@ -31,15 +31,18 @@
         },
         mounted(){
             this.$children.forEach((vm) => {
+                //每一个子组件的gutter等于当前组件的gutter
                 vm.gutter = this.gutter
             })
+            
         }
     }
 </script>
 <style lang = "scss" scoped>
     .row {
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
+      
         &.align-left {
             justify-content: flex-start;
         }
