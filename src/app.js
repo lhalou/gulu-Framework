@@ -43,12 +43,16 @@ new Vue({
     el: '#app',
     data: {
         selectedTab: 'sports',
-        loading1: false
+        loading1: false,
+        message: 'hi'
     },
     created() {
 
     },
     methods: {
+        inputChange(e){
+            console.log(e)
+        },
         yyy(data) {
             console.log('yy')
             console.log(data)
