@@ -13,9 +13,10 @@
                 type: String,
                 required: true
             },
+            // tabs的方向
             direction: {
                 type: String,
-                default: 'horizontal',
+                default: 'horizontal',  //横向
                 validator(value){
                     return ['horizontal','vertical'].indexOf(value) >= 0
                 }
