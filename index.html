@@ -90,26 +90,8 @@
     <div class = "box">
         <button @click = "showToast">点击</button>
     </div>
-    <div class = "box">
-        <g-button icon = "settings">设置</g-button>
-        <g-button icon = "settings" icon-position = "right">设置</g-button>
-        <g-button :loading = "loading1" @click = "loading1 = !loading1" >设置</g-button>
-        <g-button-group>
-            <g-button icon = "left">上一页</g-button>
-            <g-button icon = "right" icon-position = "right">下一页</g-button>
-        </g-button-group>
-        <hr/>
-    </div> 
-    <div class = "box">
-        <g-input value = "input组件"></g-input>
-        <g-input value = "input组件disabled" disabled></g-input>
-        <g-input value = "input组件readonly" readonly></g-input>
-        <g-input value = "李" error = "姓名不得少于两个字"></g-input>
-        <g-input value = "李" @change = "inputChange"></g-input>
-        <g-input v-model = "message"></g-input>
-        <p>{{message}}</p>  
-        <hr/>
-    </div>
+    
+    
     <div class = "box">
         <g-row gutter = "20">
             <g-col>1</g-col>

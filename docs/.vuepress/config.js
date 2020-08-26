@@ -3,7 +3,7 @@ module.exports = {
   description: '一个好用的 UI 框架',
   
   themeConfig: {
-    logo: 'assets/gulu.png',
+    logo: 'public/assets/gulu.png',
     sidebar: [
         {
           title: '开始',
@@ -11,7 +11,11 @@ module.exports = {
         },
         {
           title: '组件',
-          children: [ '/components/button']
+          children: [
+             '/components/button',
+             '/components/input',
+            '/components/layout'
+             ]
         } 
       ],
       nav: [

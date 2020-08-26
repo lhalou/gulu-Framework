@@ -43,11 +43,11 @@
     $font-size: 14px;
     $button-height: 32px;
     $button-bg: white;
-    $button-active-bg: #eee;
+    $button-active-bg: grey;
     $border-radius: 4px;
     $color: #333;
     $border-color: #999;
-    $border-color-hover: #666;
+    $border-color-hover: green;
     @keyframes spin {
         0% {transform: rotate(0deg);}
         100% {transform: rotate(360deg);}
@@ -65,6 +65,7 @@
             > .icon {order: 2;margin-right: 0;margin-left: .3em;}
         }
     }
+    
     .loading {animation: spin 1s infinite linear;} /*无限 线性转 */
 
 </style>
