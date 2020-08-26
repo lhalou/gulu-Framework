@@ -6,6 +6,7 @@
                 <div v-else v-html = "$slots.default[0]"></div>
             </div>
             <div class="line" ref = "line"></div>
+            <!-- 点击执行回调，关闭自身 -->
             <span class = "close" v-if = "closeButton" @click = "onClickClose">
             {{closeButton.text}}
         </span>
@@ -22,12 +23,12 @@
                 type: [Boolean,Number],
                 default: true,
                 validator (value) {
-                    return value === false || typeof value === 'number';
+                    return (value === false || typeof value === 'number');
                 }
             },
-
             closeButton: {
                 type: Object,
+                // 对象或数组默认值必须从一个工厂函数获取
                 default: () => {
                     return {
                         text: '关闭',
@@ -52,6 +53,7 @@
             this.execAutoClose()
         },
         computed: {
+            // toastClasses并不是真实的属性，是根据position计算出来的属性 
             toastClasses(){
                 return {
                     [`position-${this.position}`]:true
@@ -75,7 +77,7 @@
             },
             close(){
                 this.$el.remove() //把元素从DOM结构中解绑
-                this.$emit('close')
+                this.$emit('close') //关闭close
                 this.$destroy() // 销毁元素绑定的事件
             },
             onClickClose(){
@@ -106,6 +108,7 @@
         100% {opacity: 1;}
     }
     .inner {
+        /* 使弹出窗口处于正中间  */
         position: fixed;
         left: 50%;
         transform: translateX(-50%);

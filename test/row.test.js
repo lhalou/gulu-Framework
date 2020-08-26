@@ -11,6 +11,7 @@ describe('Row', () => {
     it('存在.', () => {
         expect(Row).to.exist
     })
+    //异步测试，必须加done，不加done，默认都是同步代码
     it('接收 gutter 属性.', (done) => {
         Vue.component('g-row', Row)
         Vue.component('g-col', Col)
@@ -32,7 +33,7 @@ describe('Row', () => {
             const cols = vm.$el.querySelectorAll('.col')
             expect(getComputedStyle(cols[0]).paddingRight).to.eq('10px')
             expect(getComputedStyle(cols[1]).paddingLeft).to.eq('10px')
-            done()
+            done() // 异步执行完调用done
             vm.$el.remove()
             vm.$destroy()
         })

@@ -44,12 +44,32 @@
             width: 1em;
             height: 1em;
         }
+        .gLayout {
+            height: 100px;
+            border: 1px solid red;
+        }
+       
+        .sider {
+            background: #333;
+            width: 100px;
+        }
+        .header {
+            background: #ccc;
+            height: 20px;
+        }
+        .footer {
+            background: #aaa;
+            height: 30px;
+        }
     </style>
 
 </head>
 
 <body>
 <div id="app">
+    <div class = "box">
+        <button @click = "showToast">点击</button>
+    </div>
     <div class = "box">
         <g-button icon = "settings">设置</g-button>
         <g-button icon = "settings" icon-position = "right">设置</g-button>
@@ -70,7 +90,7 @@
         <p>{{message}}</p>  
         <hr/>
     </div>
-    <div>
+    <div class = "box">
         <g-row gutter = "20">
             <g-col>1</g-col>
             <g-col>2</g-col>
@@ -95,7 +115,24 @@
             <g-col span = "18" offset = "2" >11</g-col>
         </g-row>
     </div>
-    
+    <div class = "box">
+        <g-layout class = "gLayout">
+            <g-header >header</g-header>
+            <g-content >content</g-content>
+            <g-footer >footer</g-footer>
+        </g-layout>
+    </div>
+    <div>
+        <g-layout style = "height: 200px;">
+            <g-sider>sider</g-sider>
+            <g-layout>
+                <g-header>header</g-header>
+                <g-content>content</g-content>
+                <g-footer>footer</g-footer>
+            </g-layout>
+        </g-layout>
+    </div>
+  
 </div>
 <script src="./src/app.js"></script>
 <!-- 

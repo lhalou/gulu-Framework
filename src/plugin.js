@@ -12,6 +12,7 @@ export default {
                 Vue,
                 message,
                 propsData:toastOptions,
+                // 防止重复close
                 onClose: () => {
                     currentToast = null
                 }

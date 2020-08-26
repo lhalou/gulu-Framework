@@ -47,7 +47,7 @@ new Vue({
         message: 'hi'
     },
     created() {
-
+        this.$toast('你好')
     },
     methods: {
         inputChange(e){
@@ -60,15 +60,16 @@ new Vue({
         showToast() {
             this.$toast('你的智商需要充值', {
                 position: 'middle',
+                // 不能使用HTML标签
                 enableHtml: false,
                 closeButton: {
                     text: '充值',
+                    //回调函数
                     callback() {
                         console.log('他说已经充值')
                     }
                 },
-                autoClose: 3,
-
+                autoClose: false
             })
         }
     }
