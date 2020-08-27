@@ -133,6 +133,21 @@ export default {
             <g-footer>footer</g-footer>
           </g-layout>
         </g-layout>
+        .footer,.header{
+          background: #b3c0d1;
+          line-height: 40px;
+          text-align: center;
+        }
+        .content {
+          background: #e9eef3;
+          line-height: 100px;
+          text-align: center;
+        }
+        .sider {
+          background: #d3dce6;
+          text-align: center;
+          line-height: 100px;
+        }
       `
     }
   }

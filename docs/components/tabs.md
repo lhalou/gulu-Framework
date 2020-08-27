@@ -1,12 +1,12 @@
 ---
-title: Layout-布局
+title: Tabs-标签栏
 sidebarDepth: 2
 ---
 
-# Layout-布局
+# Tabs-标签栏
 
 ### 常见的页面布局
 
 <ClientOnly>
-<layout-demos></layout-demos>
+
 </ClientOnly>
