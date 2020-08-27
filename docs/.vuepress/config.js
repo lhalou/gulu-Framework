@@ -1,4 +1,5 @@
 module.exports = {
+  base: '/li-gulu-test/',
   title: '咕噜 UI',
   description: '一个好用的 UI 框架',
   themeConfig: {
