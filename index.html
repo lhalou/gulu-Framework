@@ -7,94 +7,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
    
     <title>咕噜UI框架</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box
-        }
-
-        img {
-            max-width: 100%;
-        }
-
-        :root {
-            --button-height: 32px;
-            --font-size: 14px;
-            --button-bg: white;
-            --button-active-bg: #eee;
-            --button-radius: 4px;
-            --color: #333;
-            --border-color: #999;
-            --border-color-hover: #666;
-            --border-radius: 4px;
-        }
-
-        body {
-            font-size: var(--font-size);
-        }
-        #app {
-            padding: 10px;
-        }
-        .box {
-            margin: 20px;
-        }
-    </style>
-    <style>
-        .icon {
-            width: 1em;
-            height: 1em;
-        }
-        .gLayout {
-            height: 100px;
-            border: 1px solid red;
-        }
-       
-        .sider {
-            background: #333;
-            width: 100px;
-        }
-        .header {
-            background: #ccc;
-            height: 20px;
-        }
-        .footer {
-            background: #aaa;
-            height: 30px;
-        }
-    </style>
+   
 
 </head>
 
 <body>
-<div id="app">
-    <div class = "box">
-        <g-tabs :selected.sync = "selectedTab">
-            <g-tabs-head>
-                <template slot = "actions">
-                    <button>按钮</button>
-                </template>
-                <g-tabs-item name = "woman">
-                    <g-icon name = "settings"> </g-icon>美女
-                </g-tabs-item>
-                <g-tabs-item name = "finance" disabled>财经</g-tabs-item>
-                <g-tabs-item name = "sports">体育</g-tabs-item>
-            </g-tabs-head>
-            <g-tabs-body>
-                <g-tabs-pane name = "woman">美女相关资讯</g-tabs-pane>
-                <g-tabs-pane name = "finance">财经相关资讯</g-tabs-pane>
-                <g-tabs-pane name = "sports">体育相关资讯</g-tabs-pane>
-            </g-tabs-body>
-        </g-tabs>
-    </div>
-    <div class = "box">
-        <button @click = "showToast">点击</button>
-    </div>
+
     
     
-    
-    
-</div>
+
 <script src="./src/app.js"></script>
 <!-- 
     创建svg.js  不需要在手动引入svg symbols
