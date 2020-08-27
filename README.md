@@ -1,6 +1,6 @@
 # gulu  一个UI组件造轮子
 
-[![Build Status](https://travis-ci.org/lhalou/gulu-Framework.svg?branch=master)](https://travis-ci.org/lhalou/gulu-Framework)
+
 
 ## 介绍
 
