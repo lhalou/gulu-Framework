@@ -1,7 +1,6 @@
 module.exports = {
   title: '咕噜 UI',
   description: '一个好用的 UI 框架',
-  
   themeConfig: {
     logo: 'public/assets/gulu.png',
     sidebar: [
