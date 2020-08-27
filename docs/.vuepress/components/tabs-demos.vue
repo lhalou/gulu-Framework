@@ -1,5 +1,5 @@
 <template>
-<div>
+  <templateDemos title="基本用法" :code="code">
     <g-tabs :selected.sync = "selectedTab">
       <g-tabs-head>
         <g-tabs-item name = "tabs1">tabs1</g-tabs-item>
@@ -11,11 +11,9 @@
         <g-tabs-pane name = "tabs2">tabs2 content</g-tabs-pane>
         <g-tabs-pane name = "tabs3">tabs3 content</g-tabs-pane>
       </g-tabs-body>
-    </g-tabs>
-    <pre>
-      <code>{{content}}</code>
-    </pre>
-</div>
+      </g-tabs>
+  </templateDemos>
+
 
 </template>
 
@@ -26,6 +24,7 @@ import TabsHead from "../../../src/tabs-head"
 import TabsItem from "../../../src/tabs-item"
 import TabsPane from "../../../src/tabs-pane"
 import Icon from "../../../src/icon"
+import templateDemos from "./template-demos";
 export default {
   name: 'tabs-name',
   components: {
@@ -34,24 +33,25 @@ export default {
     'g-tabs-head': TabsHead,
     'g-tabs-item': TabsItem,
     'g-tabs-pane': TabsPane,
-    'g-icon': Icon
+    'g-icon': Icon,
+    templateDemos
   },
   data(){
     return {
       selectedTab: 'tabs3',
-      content: `
+      code: `
         <g-tabs :selected.sync = "selectedTab">
-            <g-tabs-head>
-                <g-tabs-item name = "tabs1">tabs1</g-tabs-item>
-                <g-tabs-item name = "tabs2">tabs2</g-tabs-item>
-                <g-tabs-item name = "tabs3">tabs3</g-tabs-item>
-              </g-tabs-head>
-              <g-tabs-body>
-                <g-tabs-pane name = "tabs1">tabs1 content</g-tabs-pane>
-                <g-tabs-pane name = "tabs2">tabs2 content</g-tabs-pane>
-                <g-tabs-pane name = "tabs3">tabs3 content</g-tabs-pane>
-              </g-tabs-body>
-        </g-tabs>
+  <g-tabs-head>
+    <g-tabs-item name = "tabs1">tabs1</g-tabs-item>
+    <g-tabs-item name = "tabs2">tabs2</g-tabs-item>
+    <g-tabs-item name = "tabs3">tabs3</g-tabs-item>
+  </g-tabs-head>
+  <g-tabs-body>
+    <g-tabs-pane name = "tabs1">tabs1 content</g-tabs-pane>
+    <g-tabs-pane name = "tabs2">tabs2 content</g-tabs-pane>
+    <g-tabs-pane name = "tabs3">tabs3 content</g-tabs-pane>
+  </g-tabs-body>
+</g-tabs>
       `
     }
   }
